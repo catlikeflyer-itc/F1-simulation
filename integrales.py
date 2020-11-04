@@ -43,4 +43,3 @@ print(integral_trapecios(a,b,delta,f))
 
 
 
-
