@@ -34,3 +34,13 @@ def get_tangents(f,a,b):
 
     return slopes, angles
 
+def find_minmax(x, f_x):
+    ymin = min(f_x)
+    xmin = x[np.where(f_x == ymin)]
+    xmin = xmin[0]
+
+    ymax = max(f_x)
+    xmax = x[np.where(f_x == ymax)]
+    xmax = xmax[0]
+
+    return [xmin, ymin], [xmax, ymax]
