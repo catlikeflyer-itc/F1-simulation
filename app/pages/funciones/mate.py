@@ -48,8 +48,9 @@ def get_length(xs, f, a, b):
 
     return simpson(f_2_int, a, b, 10000)
 
-def tangent_eq(f_prima, x_point, y_point):
-    f = lambda x: f_prima(x_point)*(x-x_point)+y_point
+def tangent_eq(f, s, x_point, y_point):
+    f = lambda x: first_diff(s, f, x_point)*(x-x_point)+y_point
+
     return f
 
 def find_minmax(x, f_x):
