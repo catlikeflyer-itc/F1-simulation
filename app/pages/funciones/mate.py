@@ -48,11 +48,6 @@ def get_length(xs, f, a, b):
 
     return simpson(f_2_int, a, b, 10000)
 
-def tangent_eq(f, s, x_point, y_point):
-    f = lambda x: first_diff(s, f, x_point)*(x-x_point)+y_point
-
-    return f
-
 def find_minmax(x, f_x):
     ymin = min(f_x)
     xmin = x[np.where(f_x == ymin)]
@@ -63,5 +58,13 @@ def find_minmax(x, f_x):
     xmax = xmax[0]
 
     return [[xmin, ymin], [xmax, ymax]]
+
+
+def eq_tangente(f, symbol, xpoint, ypoint):
+    m = first_diff(symbol,f,xpoint)
+    f = lambda x: m*(x-xpoint)+ypoint
+    return f
+
+max_speed = lambda x: 3.6*np.sqrt(9.81*2.1*x)
     
     
